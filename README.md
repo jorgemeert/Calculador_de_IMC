@@ -23,11 +23,10 @@ Neste projeto, foquei em consolidar os seguintes aprendizados:
     * Organização de layout com seletores descendentes em CSS.
 
 ---
+## Calculadora de IMC ⚖️
 
-## 🚀 Como visualizar
+> 🔗 **Acesse o projeto online:** [Clique aqui para testar](https://calculador-de-imc-silk.vercel.app)
 
-1. Clone este repositório.
-2. Abra o `index.html` em qualquer navegador moderno.
 
 ---
 
