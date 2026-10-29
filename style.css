@@ -1,92 +1,219 @@
-*{
-    margin: 0;
-    padding: 0;
-    
+:root {
+  --fundo: #eef2ff;
+  --texto: #243047;
+  --texto-suave: #64748b;
+  --cartao: #ffffff;
+  --borda: #e2e8f0;
+  --botao: #4f46e5;
+  --botao-hover: #4338ca;
+
+  --cor-abaixo: #3976a8;
+  --fundo-abaixo: #e8f3fb;
+
+  --cor-normal: #21845b;
+  --fundo-normal: #e7f6ee;
+
+  --cor-sobrepeso: #9a7100;
+  --fundo-sobrepeso: #fff6d8;
+
+  --cor-obesidade-1: #bd641d;
+  --fundo-obesidade-1: #fff0df;
+
+  --cor-obesidade-2: #c4443d;
+  --fundo-obesidade-2: #ffebe8;
+
+  --cor-obesidade-3: #a51d35;
+  --fundo-obesidade-3: #ffe4e8;
+
+  --cor-erro: #9f2535;
+  --fundo-erro: #ffeaed;
 }
 
-body{
-    background: linear-gradient(90deg, #13141B 0%, #3D3E42 100%);
-    color: #FFC600;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-h1{
-    text-align: center;
-    margin-top: 200px;
-    margin-bottom: 10px;
+body {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, var(--fundo), #f8fafc);
+  color: var(--texto);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
 }
 
-
-main section{
-    text-align: center;
-    border: solid 2px  #FFC600;
-    margin-left: 700px;
-    margin-right: 700px;
-
+header {
+  margin-bottom: 28px;
+  text-align: center;
 }
 
-section{
-    box-shadow: 5px 1px 7px 7px rgba(0,0,0,0.6);
+h1 {
+  color: #334155;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+main section {
+  width: min(100%, 380px);
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  background: var(--cartao);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+  text-align: center;
 }
 
 input {
-
-    border-radius: 8px;
-    padding: 3px;
-    
-
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: var(--texto);
+  font: inherit;
 }
 
-.peso{
-    margin-top: 50px;
-    margin-bottom: 20px;
+input::placeholder {
+  color: var(--texto-suave);
 }
 
-.altura{
-    margin-bottom: 70px;
+input:focus {
+  border-color: var(--botao);
+  outline: 3px solid rgba(79, 70, 229, 0.15);
 }
 
-
-input:placeholder-shown{
-    font-weight: 800;
+.peso {
+  margin: 10px 0 16px;
 }
 
-
-button{
-    margin-bottom: 10px;
-    border-radius: 7px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
-    background-color: #F2F2F2;
-    font-weight: 400;
-    padding: 3px 40px 3px 40px;
-    background-color: gray;
-
+.altura {
+  margin: 10px 0 22px;
 }
 
-button:hover{
-    background-color:#ffc80098 ;
+button {
+  width: 100%;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--botao);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
 }
 
-p{
-    margin-top: 10px;
-    text-align: center;
+button:hover {
+  background: var(--botao-hover);
+  transform: translateY(-1px);
 }
 
-
-footer{
-    border-top: solid 1px black;
-    margin-top: 400px;
-    text-align: center;
+button:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
 }
 
-ul li{
-    margin-bottom: 10px;
-    text-align: center;
-    
+.resultado {
+  width: min(100% - 32px, 380px);
+  margin: 20px auto 0;
+  padding: 16px 20px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
 }
 
+.resultado.abaixo {
+  border-color: #b9d9ef;
+  background: var(--fundo-abaixo);
+  color: var(--cor-abaixo);
+}
 
-h2{
-    
-    margin-top: 10px;
-    margin-bottom: 5px;
+.resultado.normal {
+  border-color: #b9e5cc;
+  background: var(--fundo-normal);
+  color: var(--cor-normal);
+}
+
+.resultado.sobrepeso {
+  border-color: #f0dda0;
+  background: var(--fundo-sobrepeso);
+  color: var(--cor-sobrepeso);
+}
+
+.resultado.obesidade-1 {
+  border-color: #f1c99f;
+  background: var(--fundo-obesidade-1);
+  color: var(--cor-obesidade-1);
+}
+
+.resultado.obesidade-2 {
+  border-color: #f0b9b3;
+  background: var(--fundo-obesidade-2);
+  color: var(--cor-obesidade-2);
+}
+
+.resultado.obesidade-3 {
+  border-color: #efaeb9;
+  background: var(--fundo-obesidade-3);
+  color: var(--cor-obesidade-3);
+}
+
+.resultado.erro {
+  border-color: #f0b9c1;
+  background: var(--fundo-erro);
+  color: var(--cor-erro);
+}
+
+footer {
+  width: min(100%, 520px);
+  margin: 40px auto 0;
+}
+
+footer article {
+  padding: 24px;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  background: var(--cartao);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+}
+
+h2 {
+  margin-bottom: 16px;
+  color: #334155;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+ul {
+  padding-left: 22px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+ul li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 28px 16px;
+  }
+
+  main section,
+  footer article {
+    padding: 22px;
+  }
 }
